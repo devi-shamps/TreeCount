@@ -1,0 +1,71 @@
+package com.example.treecount;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
+
+import com.example.treecount.databinding.ActivityMainBinding;
+
+public class MainActivity extends AppCompatActivity {
+
+    private ActivityMainBinding binding;
+
+    private ActivityResultLauncher<Intent> activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new  ActivityResultCallback<ActivityResult>() {
+        @Override
+        public void onActivityResult(ActivityResult result) {
+            if(result.getResultCode() == 1){
+                Intent resultIntent = result.getData();
+                if(resultIntent != null){
+                    Log.d("Resultat", resultIntent.getSerializableExtra("monObjetRecupere").toString() );
+                }
+            }
+        }
+    });
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+        binding.NewTricount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                builder.setNeutralButton("Annuler", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(), "Click sur le boutton Rejoindre un tricount", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
+                builder.setNegativeButton("Nouveau tricount", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(), "Click sur le boutton Nouveau tricount", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(MainActivity.this, NouveauTricount.class);
+                        activityResultLauncher.launch(intent);
+                    }
+                });
+
+                builder.setPositiveButton("Rejoindre un tricount", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getApplicationContext(), "Click sur le boutton Annuler", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                builder.show();
+            }
+        });
+
+    }
+}
