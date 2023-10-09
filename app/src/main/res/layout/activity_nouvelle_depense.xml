@@ -6,4 +6,237 @@
     android:layout_height="match_parent"
     tools:context=".NouvelleDepenseActivity">
 
+    <EditText
+        android:id="@+id/editTextTitre"
+        android:layout_width="wrap_content"
+        android:layout_height="51dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="1dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Titre"
+        app:layout_constraintBottom_toTopOf="@+id/editTextMontant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.09"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAnnuler" />
+
+    <EditText
+        android:id="@+id/editTextMontant"
+        android:layout_width="202dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="168dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Montant"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTitre" />
+
+    <Spinner
+        android:id="@+id/spinnerEuros"
+        android:layout_width="155dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="270dp"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxFriend1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/editTextMontant"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEnregistrer"
+        app:layout_constraintVertical_bias="0.56" />
+
+    <Spinner
+        android:id="@+id/spinnerChoixUtilisateurs"
+        android:layout_width="262dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxSelectAllFriends"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDate" />
+
+    <Spinner
+        android:id="@+id/spinnerDate"
+        android:layout_width="267dp"
+        android:layout_height="71dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginEnd="172dp"
+        android:layout_marginBottom="11dp"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerChoixUtilisateurs"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMontant" />
+
+    <CheckBox
+        android:id="@+id/checkBoxSelectAllFriends"
+        android:layout_width="272dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="168dp"
+        android:layout_marginBottom="12dp"
+        android:text="Séléctionner tous mes ami(e)s"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxFriend1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerChoixUtilisateurs" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFriend1"
+        android:layout_width="416dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="1dp"
+        android:text="Thomas"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxFriend2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxSelectAllFriends" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFriend2"
+        android:layout_width="400dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="15dp"
+        android:text="Alex"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxFriend1" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFriend3"
+        android:layout_width="400dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="5dp"
+        android:text="Julia"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxFriend4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxFriend2"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFriend4"
+        android:layout_width="398dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="59dp"
+        android:text="Bruno"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxFriend3" />
+
+    <TextView
+        android:id="@+id/textViewNouvelleDepense"
+        android:layout_width="186dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginBottom="52dp"
+        android:text="Nouvelle dépense"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.34"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01999998" />
+
+    <Button
+        android:id="@+id/buttonAnnuler"
+        android:layout_width="75dp"
+        android:layout_height="38dp"
+        android:text="Annuler"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textViewNouvelleDepense"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01999998" />
+
+    <Button
+        android:id="@+id/buttonEnregistrer"
+        android:layout_width="137dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="50dp"
+        android:text="Enregistrer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewNouvelleDepense"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.00999999" />
+
+    <TextView
+        android:id="@+id/textViewMontantFriend1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00.00 EUR"
+        app:layout_constraintBottom_toTopOf="@+id/textViewMontantFriend2"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxFriend1"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxFriend1"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEuros"
+        app:layout_constraintVertical_bias="0.86" />
+
+    <TextView
+        android:id="@+id/textViewMontantFriend2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:text="00.00 EUR"
+        app:layout_constraintBottom_toTopOf="@+id/textViewMontantFriend3"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxFriend2"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxFriend2"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxFriend2"
+        app:layout_constraintVertical_bias="0.37" />
+
+    <TextView
+        android:id="@+id/textViewMontantFriend3"
+        android:layout_width="74dp"
+        android:layout_height="29dp"
+        android:text="00.00 EUR"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBoxFriend3"
+        app:layout_constraintEnd_toEndOf="@+id/checkBoxFriend3"
+        app:layout_constraintHorizontal_bias="0.823"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxFriend3"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxFriend2"
+        app:layout_constraintVertical_bias="0.781" />
+
+    <TextView
+        android:id="@+id/textViewMontantFriend4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00.00 EUR"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBoxFriend4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.77"
+        app:layout_constraintStart_toStartOf="@+id/checkBoxFriend4"
+        app:layout_constraintTop_toTopOf="@+id/checkBoxFriend4" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
