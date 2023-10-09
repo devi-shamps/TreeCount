@@ -41,12 +41,13 @@
         app:srcCompat="@drawable/ic_cross" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewTriCount"
         android:layout_width="415dp"
         android:layout_height="641dp"
         android:background="@color/darklight"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewTitre"
-        tools:layout_editor_absoluteX="-1dp" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

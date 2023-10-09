@@ -6,15 +6,21 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.treecount.databinding.ActivityMainBinding;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +32,9 @@ public class MainActivity extends AppCompatActivity {
             if(result.getResultCode() == 1){
                 Intent resultIntent = result.getData();
                 if(resultIntent != null){
-                    Log.d("Resultat", resultIntent.getSerializableExtra("monObjetRecupere").toString() );
+                    Log.d("Resultat", resultIntent.getSerializableExtra("nouveauProjetTricount").toString() );
+                    ProjetK newProjet = (ProjetK) resultIntent.getSerializableExtra("nouveauProjetTricount");
+                    Toast.makeText(MainActivity.this, newProjet.toString(), Toast.LENGTH_LONG).show();
                 }
             }
         }
@@ -66,6 +74,27 @@ public class MainActivity extends AppCompatActivity {
                 builder.show();
             }
         });
+
+        Calendar cal = Calendar.getInstance();
+        Date date = cal.getTime();
+
+        ArrayList<ProjetK> projets = new ArrayList<ProjetK>();
+        projets.add(new ProjetK("Titre", "desc", "EUR", date));
+        projets.add(new ProjetK("test", "desc", "EUR", date));
+        projets.add(new ProjetK("moi", "desc", "EUR", date));
+        projets.add(new ProjetK("toi", "desc", "EUR", date));
+
+
+
+        binding.recyclerViewTriCount.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+        binding.recyclerViewTriCount.setLayoutManager(layoutManager);
+        binding.recyclerViewTriCount.setFocusable(false);
+
+        RecyclerAdapter myAdapterProjet = new RecyclerAdapter(projets);
+        binding.recyclerViewTriCount.setAdapter(myAdapterProjet);
+
+
 
     }
 }

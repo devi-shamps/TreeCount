@@ -1,10 +1,25 @@
 package com.example.treecount;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class ProjetK {
+public class ProjetK implements Serializable {
 
+    public String getTitre() {
+        return titre;
+    }
 
+    public void setTitre(String titre) {
+        this.titre = titre;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     private String titre;
     private String description;

@@ -3,6 +3,7 @@ package com.example.treecount;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.MutableLiveData;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -58,7 +59,10 @@ public class NouveauTricount extends AppCompatActivity {
 
                 ProjetK newProjet = new ProjetK(userInputTitre, userInputDescription, userInputDevise, date);
 
-                Toast.makeText(NouveauTricount.this, newProjet.toString(), Toast.LENGTH_SHORT).show();
+                Intent resultIntent = new Intent();
+                resultIntent.putExtra("nouveauProjetTricount", newProjet);
+                setResult(1, resultIntent);
+                NouveauTricount.super.onBackPressed();
             }
         });
     }
