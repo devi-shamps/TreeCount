@@ -7,10 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.treecount.databinding.ActivityNouveauTricountBinding;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class NouveauTricount extends AppCompatActivity {
@@ -42,5 +45,21 @@ public class NouveauTricount extends AppCompatActivity {
         );
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerCategorie.setAdapter(adapter2);
+
+        binding.buttonValidee.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String userInputTitre = binding.editTextTitre.getText().toString();
+                String userInputDescription = binding.editTextDescription.getText().toString();
+                String userInputDevise = binding.spinnerDevise.getSelectedItem().toString();
+                Calendar cal = Calendar.getInstance();
+                Date date = cal.getTime();
+
+                ProjetK newProjet = new ProjetK(userInputTitre, userInputDescription, userInputDevise, date);
+
+                Toast.makeText(NouveauTricount.this, newProjet.toString(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
