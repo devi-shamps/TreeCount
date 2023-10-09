@@ -24,17 +24,23 @@ public class NouveauTricount extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
-        Spinner spinner = (Spinner) findViewById(R.id.spinnerDevise);
-        // Create an ArrayAdapter using the string array and a default spinner layout.
+        //Création du spinner Devise
+        Spinner spinnerDevise = (Spinner) findViewById(R.id.spinnerDevise);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
                 R.array.devise_array,
                 R.layout.spinner_list
         );
-        // Specify the layout to use when the list of choices appears.
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        // Apply the adapter to the spinner.
-        spinner.setAdapter(adapter);
-
+        spinnerDevise.setAdapter(adapter);
+        //Création du spinner Catégorie
+        Spinner spinnerCategorie = (Spinner) findViewById(R.id.spinnerCategorie);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(
+                this,
+                R.array.categorie_array,
+                R.layout.spinner_list
+        );
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerCategorie.setAdapter(adapter2);
     }
 }
