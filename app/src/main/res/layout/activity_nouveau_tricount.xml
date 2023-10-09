@@ -78,9 +78,10 @@
         app:layout_constraintVertical_bias="0.050000012" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinnerDevise"
         android:layout_width="330dp"
         android:layout_height="35dp"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TreeCount</string>
+
+    <string-array name="devise_array">
+        <item>EUR</item>
+        <item>CHF</item>
+        <item>GBP</item>
+        <item>USD</item>
+    </string-array>
 </resources>

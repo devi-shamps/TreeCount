@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CustomSpinnerStyle" parent="Widget.AppCompat.Spinner">
+        <!-- Définissez la couleur du texte du Spinner ici -->
+        <item name="android:textColor">#FFFFFF</item>
+        <!-- Ajoutez d'autres attributs selon vos besoins -->
+    </style>
+</resources>
