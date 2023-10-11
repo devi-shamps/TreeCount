@@ -94,6 +94,15 @@ public class MainActivity extends AppCompatActivity {
         RecyclerAdapter myAdapterProjet = new RecyclerAdapter(projets);
         binding.recyclerViewTriCount.setAdapter(myAdapterProjet);
 
+        binding.buttonQuestionFrequente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Question fréquente", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, QuestionsFrequentes.class);
+                activityResultLauncher.launch(intent);
+            }
+        });
+
 
 
     }

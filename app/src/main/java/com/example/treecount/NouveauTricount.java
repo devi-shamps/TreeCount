@@ -65,5 +65,6 @@ public class NouveauTricount extends AppCompatActivity {
                 NouveauTricount.super.onBackPressed();
             }
         });
+
     }
 }
